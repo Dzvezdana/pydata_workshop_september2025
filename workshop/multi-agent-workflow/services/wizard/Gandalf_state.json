@@ -1,0 +1,74 @@
+{
+    "instances": {
+        "eae95e8d906b45bbb39fac9b0e587b07": {
+            "input": "Triggered without input.",
+            "output": "\u26a0\ufe0f Unexpected error: eae95e8d906b45bbb39fac9b0e587b07: Activity task #3 failed: Failed during chat generation: Failed to process HF chat completion: 402 Client Error: Payment Required for url: https://router.huggingface.co/hf-inference/models/HuggingFaceTB/SmolLM3-3B/v1/chat/completions (Request ID: Root=1-68bea6bf-4109fa5577400135580cb102;077487aa-8704-48be-8b85-1fb816cea89c)\n\nYou have exceeded your monthly included credits for Inference Providers. Subscribe to PRO to get 20x more monthly included credits.",
+            "start_time": "2025-09-08T11:49:51.404221",
+            "end_time": "2025-09-08T09:49:51.739714+00:00",
+            "messages": [],
+            "last_message": null,
+            "tool_history": [],
+            "source": "RandomOrchestrator",
+            "source_workflow_instance_id": "c66d7a0c25e5407faade72a28016e2e8"
+        },
+        "2ac8dee53ac14105bfa1f911b4fca9e8": {
+            "input": "Triggered without input.",
+            "output": "\u26a0\ufe0f Unexpected error: 2ac8dee53ac14105bfa1f911b4fca9e8: Activity task #3 failed: Failed during chat generation: Failed to process HF chat completion: 402 Client Error: Payment Required for url: https://router.huggingface.co/hf-inference/models/HuggingFaceTB/SmolLM3-3B/v1/chat/completions (Request ID: Root=1-68bea6f2-4df738ff3a0279533666c850;9b4cf8c0-625d-4446-8a48-69d6a842c1ec)\n\nYou have exceeded your monthly included credits for Inference Providers. Subscribe to PRO to get 20x more monthly included credits.",
+            "start_time": "2025-09-08T11:50:42.655578",
+            "end_time": "2025-09-08T09:50:42.830491+00:00",
+            "messages": [],
+            "last_message": null,
+            "tool_history": [],
+            "source": "RandomOrchestrator",
+            "source_workflow_instance_id": "2607a0320cdc4c4cb1ae100ca33eef6a"
+        },
+        "0ef4828dc6234cd197a9fef7521f4560": {
+            "input": "Triggered without input.",
+            "output": "\u26a0\ufe0f Unexpected error: 0ef4828dc6234cd197a9fef7521f4560: Activity task #3 failed: Failed during chat generation: Failed to process HF chat completion: 402 Client Error: Payment Required for url: https://router.huggingface.co/hf-inference/models/HuggingFaceTB/SmolLM3-3B/v1/chat/completions (Request ID: Root=1-68bea6f3-48dc23535497a7720e29d89c;19cc31ce-0d83-49c5-bbca-b366035ccfce)\n\nYou have exceeded your monthly included credits for Inference Providers. Subscribe to PRO to get 20x more monthly included credits.",
+            "start_time": "2025-09-08T11:50:43.071150",
+            "end_time": "2025-09-08T09:50:43.220600+00:00",
+            "messages": [],
+            "last_message": null,
+            "tool_history": [],
+            "source": "RandomOrchestrator",
+            "source_workflow_instance_id": "2607a0320cdc4c4cb1ae100ca33eef6a"
+        }
+    },
+    "chat_history": [
+        {
+            "content": "How to get to Mordor? We all need to help!",
+            "role": "user",
+            "name": "RandomOrchestrator",
+            "id": "7314d974-4180-4987-9134-d1f81857ef95",
+            "timestamp": "2025-09-08T11:49:44.316759"
+        },
+        {
+            "content": "\u26a0\ufe0f Unexpected error: 3eb42e6b19e54f47be042f4fbd011da4: Activity task #3 failed: Failed during chat generation: Failed to process HF chat completion: 402 Client Error: Payment Required for url: https://router.huggingface.co/hf-inference/models/HuggingFaceTB/SmolLM3-3B/v1/chat/completions (Request ID: Root=1-68bea6bb-5843eca41d0ebfed618029a3;d3a97807-25c6-48a1-a741-7a53d4b64c6b)\n\nYou have exceeded your monthly included credits for Inference Providers. Subscribe to PRO to get 20x more monthly included credits.",
+            "role": "user",
+            "name": "Frodo",
+            "id": "a542a074-b715-4a1f-82a6-7266c9b7aa01",
+            "timestamp": "2025-09-08T11:49:47.763760"
+        },
+        {
+            "content": "\u26a0\ufe0f Unexpected error: cc6493c964614078b65d8062bd0a4701: Activity task #3 failed: Failed during chat generation: Failed to process HF chat completion: 402 Client Error: Payment Required for url: https://router.huggingface.co/hf-inference/models/HuggingFaceTB/SmolLM3-3B/v1/chat/completions (Request ID: Root=1-68bea6c4-6786b75e017b6a485a1760af;9813e32c-8819-494b-b27c-b7a9b010ffc5)\n\nYou have exceeded your monthly included credits for Inference Providers. Subscribe to PRO to get 20x more monthly included credits.",
+            "role": "user",
+            "name": "Legolas",
+            "id": "58840afe-8f78-4a4c-91dd-b9e8bbb9aaa7",
+            "timestamp": "2025-09-08T11:49:56.201789"
+        },
+        {
+            "content": "We need to discuss our route to Mordor. What do you think?",
+            "role": "user",
+            "name": "RandomOrchestrator",
+            "id": "c4b2ff20-3d7c-4050-beb3-4481cc46802a",
+            "timestamp": "2025-09-08T11:50:42.562303"
+        },
+        {
+            "content": "\u26a0\ufe0f Unexpected error: 076009a51ee240eeb62d1b842858af7d: Activity task #3 failed: Failed during chat generation: Failed to process HF chat completion: 402 Client Error: Payment Required for url: https://router.huggingface.co/hf-inference/models/HuggingFaceTB/SmolLM3-3B/v1/chat/completions (Request ID: Root=1-68bea6f2-37e8f4155b9f3fe6512eefce;59f185ac-3fe8-41da-b061-2437feaf17ab)\n\nYou have exceeded your monthly included credits for Inference Providers. Subscribe to PRO to get 20x more monthly included credits.",
+            "role": "user",
+            "name": "Frodo",
+            "id": "19600df9-771d-42ba-a3f1-4f4e484d0f7c",
+            "timestamp": "2025-09-08T11:50:43.042432"
+        }
+    ]
+}

@@ -2,7 +2,7 @@
 
 ## Assignment 3. Workflow Orchestrators
 
-A crucial component of multi-agent systems is the orchestrator that coordinates interactions between agents. Dapr Agents supports three orchestration strategies: Random, LLM-based and RoundRobin.
+A crucial component of multi-agent systems is the orchestrator that coordinates interactions between agents. Dapr Agents supports three orchestration strategies: Random, LLM-based, and RoundRobin.
 
 ### Random Orchestrator
 
@@ -58,7 +58,7 @@ This approach provides:
 
 ## Running the Multi-Agent System
 
-So far we started our agent application few times using the Dapr CLI command `dapr run -f dapr-random.yaml`.
+So far we have started our agent applications a few times using the Dapr CLI command `dapr run -f dapr-random.yaml`.
 
 The Dapr CLI provides a multi-app run feature that allows you to start multiple applications with their Dapr sidecars using a single command. This is essential for running multi-agent systems where several services need to work together.
 
@@ -99,15 +99,15 @@ apps:
 
 Let's tie it all together and explore how the collaboration works in a typical multi-agent interaction:
 
-Client Submits a Query: "How to get to Mordor? We all need to help!"
-Orchestrator Receives the Query: The orchestrator (Random, RoundRobin, or LLM-based) receives the query
-Agent Selection: The orchestrator selects an agent to respond (based on its strategy)
-Agent Processes the Query: The selected agent generates a response
-Response Publication: The agent publishes its response to the pub/sub system
-Orchestrator Evaluates: The orchestrator decides if more agent input is needed
-Additional Agent Selection: If needed, another agent is selected to contribute
-Response Aggregation: The contributions are collected into a coherent conversation
-Client Receives Response: The final response is sent back to the client
+1. Client Submits a Query: "How to get to Mordor? We all need to help!"
+2. The orchestrator (Random, RoundRobin, or LLM-based) receives the query
+3. The orchestrator selects an agent to respond (based on its strategy)
+4. The selected agent generates a response
+5. The agent publishes its response to the pub/sub system
+6. The orchestrator decides if more agent input is needed
+7. If needed, another agent is selected to contribute
+8. The contributions are collected into a coherent conversation
+9. The final response is sent back to the client
 
 This cycle can continue for multiple iterations until the task is complete or a maximum number of iterations is reached.
 
@@ -128,7 +128,7 @@ For more information, take a look at the docs: https://v1-16.docs.dapr.io/develo
 
 **Expected output:** The agents will engage in a conversation about getting to Mordor, with different agents contributing based on their character. Observe that in the logs.
 
-### Exercise 1 (a): Inspect the output of the LLM-based orchestator
+### Exercise 1 (a): Inspect the output of the LLM-based orchestrator
 
 The LLM-based orchestrator has saved the output in a file named LLMOrchestrator_state.json located in the services/workflow-llm/ folder.
 
@@ -160,5 +160,5 @@ The RoundRobin orchestrator cycles through agents in a predetermined sequence.
 1. **Service Startup**: If services fail to start, verify Dapr components configuration
 2. **Communication Issues**: Check Redis connection and pub/sub setup
 3. **Workflow Errors**: Check Zipkin traces for detailed request flows
-4. **Port Conflicts**: If ports are already in use, check which port is already in use
+4. **Port Conflicts**: If ports are already in use, identify and free the conflicting port
 5. **System Reset**: Clear Redis data through Redis Insights if needed

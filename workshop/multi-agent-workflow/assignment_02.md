@@ -6,7 +6,7 @@ In this challenge, you'll learn how to create durable AI agents that can survive
 
 ### Why Use DurableAgent?
 
-The DurableAgent is Dapr Agents most powerful and resilient agent type, designed for production-level AI applications. The DurableAgent:
+The DurableAgent is Dapr Agents' most powerful and resilient agent type, designed for production-level AI applications. The DurableAgent:
 
 * Implements the Workflow Pattern: Uses Dapr's workflow engine to execute tasks in a durable, recoverable manner
 * Preserves State Across Failures: Stores all conversation state and execution progress in persistent storage
@@ -223,4 +223,4 @@ This allows you to track the progress of long-running tasks.
 
 ## Next assignment
 
-You've now learned about how to define durable AI agents that can survive failures and maintain state across sessions. Let's move on to the next challenge where you'll use about different types of workflow orchestration. Make sure you stop all running processes before proceeding to the next assignment.
+You've now learned about how to define durable AI agents that can survive failures and maintain state across sessions. Let's move on to the next challenge where you'll learn about different types of workflow orchestration. Make sure you stop all running processes before proceeding to the next assignment.

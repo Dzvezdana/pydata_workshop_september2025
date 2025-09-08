@@ -4,7 +4,7 @@ For this workshop, you will build a Fellowship of the Ring quest planning system
 
 After finishing this workshop you will understand how to:
 
-* create and configure AI agents personality and behavior
+* create and configure AI agents' personality and behavior
 * configure durable AI agents using Dapr component configuration (state stores, pub/sub)
 * orchestrate multiple agents
 
@@ -41,7 +41,7 @@ dapr init
 
 ## Assignment 1. Define Agents Characteristics, Personality, and Capabilities
 
-This assignment demonstrates how to define the agents characteristics, personality, and capabilities.
+This assignment demonstrates how to define the agents' characteristics, personality, and capabilities.
 
 ### Exercise 1: Explore Agent Behavior
 
@@ -122,7 +122,7 @@ dapr run -f dapr-random.yaml
 ```
 <!-- END_STEP -->
 
-**Expected output:** The agents will engage in a conversation about getting to Mordor, with different agents contributing based on their character. Observe that in the logs.
+**Expected output:** The agents will engage in a conversation about getting to Mordor, with different agents contributing based on their character. Observe this in the logs.
 
 Open a new Terminal window and list all available services:
 
@@ -144,7 +144,7 @@ Open a new terminal and start the Dapr Dashboard by running:
 dapr dashboard
 ```
 
-You can view components, configurations and service details at http://localhost:8080/
+You can view components, configurations, and service details at http://localhost:8080/
 
 #### Zipkin Tracing
 
@@ -155,7 +155,7 @@ You can access it here http://localhost:9411/zipkin/
 1. **Console Logs**: Monitor real-time workflow execution and agent interactions
 2. **Dapr Dashboard**: View components, configurations and service details at http://localhost:8080/
 3. **Zipkin Tracing**: Access distributed tracing at http://localhost:9411/zipkin/
-4. **Dapr Metrics**: Dapr supports monitoring agent performance metrics via (ex: HobbitApp) http://localhost:6001/metrics. This requires setting up Prometheus and is outside of the scope of this workshop.
+4. **Dapr Metrics**: Dapr supports monitoring agent performance metrics via (ex: HobbitApp) http://localhost:6001/metrics. This requires setting up Prometheus and is outside the scope of this workshop.
 
 ## Exercise 3: Add Additional Lord of the Rings Characters
 
@@ -166,7 +166,7 @@ Try to add more Lord of the Rings characters as services, for example you could 
 To do this:
 
 1. Add a new folder in `services` and copy the contents of `app.py`.
-2. Adjust the `name`, `role`, `goal` and the `instructions`. Don't adjust the other fields.
+2. Adjust the `name`, `role`, `goal` and the `instructions`. Do not adjust the other fields.
 3. Register your newly created service in `dapr-random.yaml`.
 4. Rerun your app.
 
@@ -189,8 +189,8 @@ By leveraging multiple specialized agents, you can create AI systems that tackle
 * API Key Issues: If you see an authentication error, verify your HuggingFace API key is set,
 * Python Version: If you encounter compatibility issues, make sure you're using Python 3.10+
 * Import Errors: If you see module not found errors, verify that pip install -r requirements.txt completed successfully
-* Workflows Errors: Run: `docker exec dapr_redis redis-cli FLUSHAL & docker restart dapr_redis`
+* Workflows Errors: Run: `docker exec dapr_redis redis-cli FLUSHALL && docker restart dapr_redis`
 
 ## Next assignment
 
-Make sure you stop all running processes before proceeding to the next assignment. Let's move on to the next challenge where you'll learn how to configure durability in Agents.
+Ensure all running processes are stopped before proceeding to the next assignment. Let's move on to the next challenge where you'll learn how to configure durability in Agents.

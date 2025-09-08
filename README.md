@@ -19,6 +19,8 @@ cd pydata_workshop_september2025/
 
 ## Usage
 
+Make sure you have Python 3.10+ installed.
+
 Set up a virtual environment using virtualenv:
 
 ```
@@ -28,7 +30,7 @@ pip install virtualenv
 # Create virtual environment
 python3 -m venv .venv
 
-# Activate virtuale environment (command might differ per OS)
+# Activate virtual environment (command might differ per OS)
 source ./.venv/bin/activate
 
 # Install dependencies
@@ -60,7 +62,7 @@ API keys can be accessed via this [privatebin](TODO). The password will be share
 
 The keys will only be available during the workshop. If you want to follow the workshop after, please generate read-only HuggingFace API key yourself first at https://huggingface.co/.
 
-Create a `.env` file for your API keys in `workshop/multi-agent-workflow/`:
+Create a `.env` file in the `workshop/multi-agent-workflow/` directory with your API keys:
 
 ```env
 cd workshop/multi-agent-workflow/
@@ -73,10 +75,10 @@ Open `assignment_01.md` and start the workshop.
 
 This workshop was set up by Dana Arsovska ([Git](https://github.com/Dzvezdana), [LinkedIn](https://www.linkedin.com/in/dana-arsovska/)) and Marc Duiker ([web site](https://marcduiker.dev/)).
 
-All code samples shown in this workshop is available in the [Dapr Agents repository](https://github.com/dapr/dapr-agents/tree/main) in the quickstarts folder. Give this repo a star and clone it locally to use it as reference material for building your next Dapr Agents project.
+All code samples shown in this workshop are available in the [Dapr Agents repository](https://github.com/dapr/dapr-agents/tree/main) in the quickstarts folder. Give this repo a star and clone it locally to use it as reference material for building your next Dapr Agents project.
 
 You can also check out the free [Dapr Agents Course at Dapr University](https://www.diagrid.io/dapr-university).
 
-If you doing this workshop at home and you have any questions join [Dapr's Community Discord channel](https://dapr.io/community/).
+If you are doing this workshop at home and have any questions, joi [Dapr's Community Discord channel](https://dapr.io/community/).
 
 Thank you for joining and participating in our workshop! ✨🎉

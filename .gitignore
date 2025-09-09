@@ -133,6 +133,7 @@ dmypy.json
 # Other
 .DS_Store
 secrets.json
+*_state.json
 .dapr
 .chainlit
 .files

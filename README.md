@@ -62,7 +62,7 @@ API keys can be accessed via this [privatebin](TODO). The password will be share
 
 The keys will only be available during the workshop. If you want to follow the workshop after, please generate read-only HuggingFace API key yourself first at https://huggingface.co/.
 
-Create a `.env` file in the `workshop/multi-agent-workflow/` directory with your API keys:
+Create a `.env` file in the `workshop/multi-agent-workflow/` directory with your API keys
 
 ```env
 cd workshop/multi-agent-workflow/
@@ -79,6 +79,6 @@ All code samples shown in this workshop are available in the [Dapr Agents reposi
 
 You can also check out the free [Dapr Agents Course at Dapr University](https://www.diagrid.io/dapr-university).
 
-If you are doing this workshop at home and have any questions, joi [Dapr's Community Discord channel](https://dapr.io/community/).
+If you are doing this workshop at home and have any questions, join [Dapr's Community Discord channel](https://dapr.io/community/).
 
 Thank you for joining and participating in our workshop! ✨🎉

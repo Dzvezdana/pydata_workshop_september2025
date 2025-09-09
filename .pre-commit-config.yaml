@@ -11,3 +11,13 @@ repos:
       # Formatter
       - id: ruff-format
         types_or: ["python"]
+      - id: codespell
+        name: 📝 Check code for common misspellings
+        language: system
+        types: [text]
+        pass_filenames: false
+      - id: end-of-file-fixer
+        name: 🧹 Fix End of Files
+        language: system
+        types: [text]
+

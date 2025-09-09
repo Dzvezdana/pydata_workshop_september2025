@@ -2,7 +2,7 @@
 
 ## Assignment 2. Build Stateful and Resilient Agents
 
-In this challenge, you'll learn how to create durable AI agents that can survive failures and maintain state.
+In this challenge, you will learn how to create durable AI agents that can survive failures and maintain state.
 
 ### Why Use DurableAgent?
 
@@ -191,7 +191,7 @@ INSTANCEID=$(curl -s -X POST http://localhost:8004/start-workflow \
   tr -d '\r\n')
 ```
 
-This initiates a new workflow for finding a route. You'll receive a workflow ID in response.
+This initiates a new workflow for finding a route. You will receive a workflow ID in response.
 
 #### Check the Workflow Status
 
@@ -211,7 +211,6 @@ This allows you to track the progress of long-running tasks.
 
 **Expected behavior:** The agent should resume from where it left off, demonstrating durability.
 
-
 ### [Optional] Exercise 5: Add ConversationDaprStateMemory
 
 `ConversationDaprStateMemory` configures the agent to store its conversation history in a Dapr state store, enabling it to remember context across sessions and survive restarts. In this optional exercise, try to enable `ConversationDaprStateMemory` for our `DurableAgents`.
@@ -223,4 +222,4 @@ This allows you to track the progress of long-running tasks.
 
 ## Next assignment
 
-You've now learned about how to define durable AI agents that can survive failures and maintain state across sessions. Let's move on to the next challenge where you'll learn about different types of workflow orchestration. Make sure you stop all running processes before proceeding to the next assignment.
+You've now learned about how to define durable AI agents that can survive failures and maintain state across sessions. Let's move on to the next challenge where you will learn about different types of workflow orchestration. Make sure you stop all running processes before proceeding to the next assignment.

@@ -1,0 +1,174 @@
+# Multi-Agent Event-Driven Workflows
+
+## Assignment 3. Workflow Orchestrators
+
+A crucial component of multi-agent systems is the orchestrator that coordinates interactions between agents. Dapr Agents supports three orchestration strategies: Random, LLM-based, and RoundRobin.
+
+### Random Orchestrator
+
+The Random orchestrator selects agents randomly to respond to queries. Open the `services/workflow-random/app.py` file in the Editor window to see how it is implemented.
+
+```python
+from dapr_agents import RandomOrchestrator
+from dotenv import load_dotenv
+import asyncio
+import logging
+
+async def main():
+    try:
+        random_workflow_service = RandomOrchestrator(
+            name="RandomOrchestrator",
+            message_bus_name="messagepubsub",
+            state_store_name="agenticworkflowstate",
+            state_key="workflow_state",
+            agents_registry_store_name="agentstatestore",
+            agents_registry_key="agents_registry",
+            max_iterations=3
+        ).as_service(port=8004)
+        await random_workflow_service.start()
+    except Exception as e:
+        print(f"Error starting service: {e}")
+```
+
+This approach is useful for:
+
+* Load balancing across agents
+* Creating more diverse conversations
+* Testing and debugging multi-agent interactions
+
+### RoundRobin Orchestrator
+
+The RoundRobin orchestrator cycles through agents in a predetermined sequence.
+
+This approach ensures:
+
+* Equal participation from all agents
+* Predictable turn-taking behavior
+* Fair distribution of tasks
+
+### LLM-Based Orchestrator
+
+The LLM-based orchestrator uses an LLM to intelligently select the most appropriate agent for each query. 
+
+This approach provides:
+
+* Context-aware agent selection
+* Dynamic adaptation to conversation flow
+* More natural multi-agent interactions
+
+## Running the Multi-Agent System
+
+So far we have started our agent applications a few times using the Dapr CLI command `dapr run -f dapr-random.yaml`.
+
+The Dapr CLI provides a multi-app run feature that allows you to start multiple applications with their Dapr sidecars using a single command. This is essential for running multi-agent systems where several services need to work together.
+
+Examine the `dapr-random.yaml` configuration file:
+
+```yaml
+version: 1
+common:
+  resourcesPath: ./components
+  logLevel: info
+  appLogDestination: console
+  daprdLogDestination: console
+
+apps:
+- appID: HobbitApp
+  appDirPath: ./services/hobbit/
+  command: ["python3", "app.py"]
+
+- appID: WizardApp
+  appDirPath: ./services/wizard/
+  command: ["python3", "app.py"]
+
+- appID: ElfApp
+  appDirPath: ./services/elf/
+  command: ["python3", "app.py"]
+
+- appID: WorkflowApp
+  appDirPath: ./services/workflow-random/
+  command: ["python3", "app.py"]
+  appPort: 8004
+
+- appID: ClientApp
+  appDirPath: ./services/client/
+  command: ["python3", "http_client.py"]
+```
+
+## How Multi-Agent Collaboration Works
+
+Let's tie it all together and explore how the collaboration works in a typical multi-agent interaction:
+
+1. Client Submits a Query: "How to get to Mordor? We all need to help!"
+2. The orchestrator (Random, RoundRobin, or LLM-based) receives the query
+3. The orchestrator selects an agent to respond (based on its strategy)
+4. The selected agent generates a response
+5. The agent publishes its response to the pub/sub system
+6. The orchestrator decides if more agent input is needed
+7. If needed, another agent is selected to contribute
+8. The contributions are collected into a coherent conversation
+9. The final response is sent back to the client
+
+This cycle can continue for multiple iterations until the task is complete or a maximum number of iterations is reached.
+
+## Exercise 1: Implement Different Coordination Strategies - RoundRobin
+
+Let's implement RoundRobin orchestrator.
+
+1. Implement `workflow-roundrobin` in `services`.
+2. Implement `dapr-roundrobin.yaml`.
+
+Then run the application using:
+
+```bash
+dapr run -f dapr-roundrobin.yaml 
+```
+
+The RoundRobin orchestrator cycles through agents in a predetermined sequence.
+
+**Expected output:** The agents will engage in a conversation about getting to Mordor, with different agents contributing based on their character. Observe that in the logs.
+
+## Exercise 2: Implement Different Coordination Strategies - LLM-Based
+
+Let's implement an LLM orchestrator.
+
+1. Implement `workflow-llm` in `services`.
+2. Implement `dapr-llm.yaml`.
+
+Then run the application using:
+
+```bash
+dapr run -f dapr-llm.yaml
+```
+
+For more information, take a look at the docs: https://v1-16.docs.dapr.io/developing-applications/dapr-agents/dapr-agents-core-concepts/#event-driven-orchestration
+
+**Expected output:** The agents will engage in a conversation about getting to Mordor, with different agents contributing based on their character. Observe that in the logs.
+
+### Exercise 2 (a): Inspect the output of the LLM-based orchestrator
+
+The LLM-based orchestrator has saved the output in a file named `LLMOrchestrator_state.json` located in the `services/workflow-llm/` folder.
+
+> **_NOTE:_** Since this json file is generated by the orchestrator, depending on your editor it might not be visible until you have refreshed the tree view.
+
+Use the Editor window to open the `services/workflow-llm/LLMOrchestrator_state.json` file and inspect its content. The file contains an instances element with different instance ID values, each containing input and output values, messages, and a plan with steps and sub steps with a status.
+
+> **_NOTE:_** The LLM-based orchestrator makes many calls to HuggingFace API and could result in rate limiting your access to the HuggingFace API.
+
+## Troubleshooting
+
+1. **Service Startup**: If services fail to start, verify Dapr components configuration
+2. **Communication Issues**: Check Redis connection and pub/sub setup
+3. **Workflow Errors**: Check Zipkin traces for detailed request flows
+4. **Port Conflicts**: If ports are already in use, identify and free the conflicting port
+5. **System Reset**: Clear Redis data using `docker exec dapr_redis redis-cli FLUSHALL && docker restart dapr_redis` or by using Redis Insights
+
+## Next Steps
+
+This workshop covered how to implement Agent Mesh with Dapr Agents. All code samples shown in this workshop are available in the [Dapr Agents repository](https://github.com/dapr/dapr-agents/tree/main) in the quickstarts folder. Using the quickstarts you can explore how Dapr Agents supports MCP, Agent Workflows and more!
+
+You can also check out the free [Dapr Agents Course at Dapr University](https://www.diagrid.io/dapr-university).
+
+If you are doing this workshop at home and have any questions, join [Dapr's Community Discord channel](https://dapr.io/community/).
+
+Thank you for joining and participating in our workshop! ✨🎉

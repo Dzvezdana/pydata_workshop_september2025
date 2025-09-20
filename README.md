@@ -58,11 +58,20 @@ dapr init
        
 ### API Keys
 
-API keys can be accessed via this [privatebin](TODO). The password will be shared during the workshop. 
+API keys can be accessed via this [privatebin](TODO). The password will be shared during the workshop.
 
 The keys will only be available during the workshop. If you want to follow the workshop after, please generate read-only HuggingFace API key yourself first at https://huggingface.co/.
 
-Create a `.env` file in the `workshop/multi-agent-workflow/` directory with your API keys
+If you need a quick recap on agents and tools, navigate to `workshop/intro-to-agents/`:
+
+```env
+cd workshop/intro-to-agents/
+export HUGGINGFACE_API_KEY=your_api_key_here >> .env
+```
+
+Open `[optional] assignment_01.md` and start the workshop.
+
+After you are done with this assignment, create a `.env` file in the `workshop/multi-agent-workflow/` directory with your API keys:
 
 ```env
 cd workshop/multi-agent-workflow/

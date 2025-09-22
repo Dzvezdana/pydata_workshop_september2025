@@ -130,6 +130,8 @@ The RoundRobin orchestrator cycles through agents in a predetermined sequence.
 
 ## Exercise 2: Implement Different Coordination Strategies - LLM-Based
 
+> The LLM-based orchestrator is not fully compatible with Dapr 1.16 and Dapr Agents 0.9.1 yet. If you want to try it now, downgrade to Dapr 1.15.11 and use Dapr Agents 0.8.1.
+
 Let's implement an LLM orchestrator.
 
 1. Implement `workflow-llm` in `services`.

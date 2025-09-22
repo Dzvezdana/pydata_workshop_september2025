@@ -2,7 +2,7 @@ import asyncio
 from weather_tools import tools
 from dapr_agents import Agent, HFHubChatClient
 from dotenv import load_dotenv
-from dapr_agents.memory import ConversationDaprStateMemory
+#from dapr_agents.memory import ConversationDaprStateMemory
 
 
 load_dotenv()
@@ -20,7 +20,7 @@ AIAgent = Agent(
     ],
     llm=llm,
     tools=tools,
-    memory=ConversationDaprStateMemory(store_name="historystore", session_id="some-id")
+    #memory=ConversationDaprStateMemory(store_name="historystore", session_id="some-id")
 )
 
 async def main():

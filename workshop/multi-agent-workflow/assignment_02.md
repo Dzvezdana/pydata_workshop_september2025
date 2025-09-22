@@ -163,7 +163,7 @@ Let's examine how state is stored:
 docker exec -it dapr_redis redis-cli
 > KEYS *
 > HGETALL agents_registry
-> HGETALL workflow_state
+> HGETALL WizardApp||workflow_state
 ```
 
 **Expected output:** You should see keys related to workflow state, agent registry, and pub/sub messages.
@@ -217,8 +217,8 @@ This allows you to track the progress of long-running tasks.
 
 **Hints**:
 
-- Take a look at the [docs](https://v1-16.docs.dapr.io/developing-applications/dapr-agents/dapr-agents-core-concepts/).
-- Don't forget to add a new component in the `components` folder.
+* Take a look at the [docs](https://v1-16.docs.dapr.io/developing-applications/dapr-agents/dapr-agents-core-concepts/).
+* Don't forget to add a new component in the `components` folder.
 
 ## Next assignment
 

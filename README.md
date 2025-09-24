@@ -168,7 +168,7 @@ dapr init
 
 ## API Keys
 
-API keys can be accessed via this [privatebin](TODO). The password will be shared during the workshop.
+API keys can be accessed via this [privatebin](https://privatebin.net/?e6d4e8e7efc6d902#5EvJn3xXQ7m2ZX1YoMHgGhT9BoUL3AjYUs8ubjMMsQ6h). The password will be shared during the workshop.
 
 The keys will only be available during the workshop. If you want to follow the workshop after, please generate read-only HuggingFace API key yourself first at https://huggingface.co/.
 
